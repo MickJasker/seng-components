@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-    <SengImage
-      class="image"
-      :src="require('./assets/logo.png')"
-      alt="sdfsdf"
-      large="https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      normal="https://images.unsplash.com/photo-1555932339-5d13d6a9ae5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      :breakpoints="{
-        normal: '376px',
-        large: '768px'
-      }"
-    />
-
-    <SengImage
-      class="image"
-      v-for="(item, index) in images"
-      :key="index"
-      :src="item.src"
-      :alt="`${index}`"
-      :lazy="true"
-    />
+    <div class="seng-image component">
+      <h4>Example</h4>
+      <h2>Component: seng-image</h2>
+      <seng-image
+        class="image"
+        :src="require('@/assets/logo.png')"
+        alt="seng-image"
+        large="https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        normal="https://images.unsplash.com/photo-1555932339-5d13d6a9ae5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        :breakpoints="{
+          normal: '376px',
+          large: '768px'
+        }"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,38 +32,7 @@ interface Image {
     SengImage
   }
 })
-export default class App extends Vue {
-  images: Image[] = [
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    },
-    {
-      src:
-        "https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-    }
-  ];
-}
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
@@ -86,6 +50,18 @@ export default class App extends Vue {
 
     img {
       object-fit: cover;
+    }
+  }
+
+  .component {
+    text-align-last: left;
+    h2 {
+      margin: 0;
+    }
+
+    h4 {
+      margin-bottom: 2px;
+      opacity: 0.75;
     }
   }
 }
