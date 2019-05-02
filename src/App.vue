@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="seng-image component">
-      <h4>Example</h4>
-      <h2>Component: seng-image</h2>
+      <h4>Component</h4>
+      <h2>seng-image</h2>
       <seng-image
         class="image"
         :src="require('@/assets/logo.png')"
@@ -15,12 +15,14 @@
         }"
       />
     </div>
+    <seng-statistics />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import SengImage from "@/components/SengImage.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import SengImage from '@/components/SengImage.vue';
+import SengStatistics from '@/components/SengStatistics.vue';
 
 interface Image {
   src: string;
@@ -29,20 +31,16 @@ interface Image {
 
 @Component({
   components: {
-    SengImage
-  }
+    SengImage,
+    SengStatistics,
+  },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: sans-serif;
 
   .image {
     width: 100%;
@@ -55,11 +53,19 @@ export default class App extends Vue {}
 
   .component {
     text-align-last: left;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: solid 1px hsl(210, 20%, 50%);
+    }
+
     h2 {
       margin: 0;
     }
 
     h4 {
+      margin: 0;
       margin-bottom: 2px;
       opacity: 0.75;
     }

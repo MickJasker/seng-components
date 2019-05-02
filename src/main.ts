@@ -1,17 +1,15 @@
-import Vue from "vue";
-import App from "./App.vue";
-import upperFirst from "lodash/upperFirst";
-import camelCase from "lodash/camelCase";
-
-import VImgGrid from "./components/imageSequences/VImgGrid.vue";
+import Vue from 'vue';
+import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
+import App from './App.vue';
 
 const requireComponent = require.context(
-  "./components",
+  './components',
   true,
-  /V[A-Z]\w+\.vue$/
+  /V[A-Z]\w+\.vue$/,
 );
 
-requireComponent.keys().forEach(fileName => {
+requireComponent.keys().forEach((fileName) => {
   // Get component config
   const componentConfig = requireComponent(fileName);
 
@@ -20,10 +18,10 @@ requireComponent.keys().forEach(fileName => {
     camelCase(
       // Gets the file name regardless of folder depth
       fileName
-        .split("/")
+        .split('/')
         .pop()!
-        .replace(/\.\w+$/, "")
-    )
+        .replace(/\.\w+$/, ''),
+    ),
   );
 
   // Register component globally
@@ -32,12 +30,12 @@ requireComponent.keys().forEach(fileName => {
     // Look for the component options on `.default`, which will
     // exist if the component was exported with `export default`,
     // otherwise fall back to module's root.
-    componentConfig.default || componentConfig
+    componentConfig.default || componentConfig,
   );
 });
 
 Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App)
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app');
