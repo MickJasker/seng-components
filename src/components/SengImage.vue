@@ -2,12 +2,41 @@
   <intersect @enter.once="enterView">
     <div class="seng-image">
       <picture v-if="(isVisible && large) || normal">
+
+        <source
+          :srcset="webpLarge"
+          :media="`(min-width: ${breakpoints.large})`"
+          type="image/webp"
+          v-if="webpLarge && isNetworkFast"
+        >
         <source
           :srcset="large"
           :media="`(min-width: ${breakpoints.large})`"
+          type="image/jpeg"
           v-if="large && isNetworkFast"
         >
-        <source :srcset="normal" :media="`(min-width: ${breakpoints.normal})`" v-if="normal">
+
+        <source
+          :srcset="webpNormal"
+          :media="`(min-width: ${breakpoints.normal})`"
+          type="image/webp"
+          v-if="webpNormal"
+        >
+        <source
+          :srcset="normal"
+          :media="`(min-width: ${breakpoints.normal})`"
+          type="image/jpeg"
+          v-if="normal"
+        >
+
+        <source
+          :srcset="webpSmall"
+          type="image/webp"
+        >
+        <source
+          :srcset="src"
+          type="image/jpeg"
+        >
         <img :src="src" :alt="alt">
       </picture>
       <img v-else-if="isVisible" :src="src" :alt="alt">
@@ -42,6 +71,12 @@ export default class SengImage extends Vue {
   @Prop(String) readonly src!: string;
 
   @Prop(String) readonly alt!: string;
+
+  @Prop(String) readonly webpSmall?: string;
+
+  @Prop(String) readonly webpNormal?: string;
+
+  @Prop(String) readonly webpLarge?: string;
 
   @Prop({
     default: false,
