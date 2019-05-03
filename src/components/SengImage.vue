@@ -1,7 +1,7 @@
 <template>
   <intersect @enter.once="enterView">
     <div class="seng-image">
-      <picture v-if="(isVisible && large) || normal">
+      <picture v-if="isVisible && (large || normal)">
 
         <source
           :srcset="webpLarge"
