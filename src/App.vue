@@ -5,12 +5,73 @@
       <h2>seng-image</h2>
       <seng-image
         class="image"
-        :src="require('@/assets/logo.png')"
         alt="seng-image"
-        large="https://images.unsplash.com/photo-1555933588-36ac8a559925?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-        normal="https://images.unsplash.com/photo-1555932339-5d13d6a9ae5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :webpSmall="require('@/assets/img.webp')"
+        :webpNormal="require('@/assets/img@2.webp')"
+        :webpLarge="require('@/assets/img@3.webp')"
+        :lazy="true"
         :breakpoints="{
-          normal: '376px',
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </div>
+    <div class="seng-image component">
+      <h4>Component</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :webpSmall="require('@/assets/img.webp')"
+        :webpNormal="require('@/assets/img@2.webp')"
+        :webpLarge="require('@/assets/img@3.webp')"
+        :lazy="true"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </div>
+    <div class="seng-image component">
+      <h4>Component</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :webpSmall="require('@/assets/img.webp')"
+        :webpNormal="require('@/assets/img@2.webp')"
+        :webpLarge="require('@/assets/img@3.webp')"
+        :lazy="true"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </div>
+    <div class="seng-image component">
+      <h4>Component</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :webpSmall="require('@/assets/img.webp')"
+        :webpNormal="require('@/assets/img@2.webp')"
+        :webpLarge="require('@/assets/img@3.webp')"
+        :lazy="true"
+        :breakpoints="{
+          normal: '465px',
           large: '768px'
         }"
       />
@@ -44,7 +105,7 @@ export default class App extends Vue {}
 
   .image {
     width: 100%;
-    height: 200px;
+    height: 600px;
 
     img {
       object-fit: cover;
