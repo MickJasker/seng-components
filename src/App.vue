@@ -9,66 +9,6 @@
         :src="require('@/assets/img.jpg')"
         :large="require('@/assets/img@3.jpg')"
         :normal="require('@/assets/img@2.jpg')"
-        :webpSmall="require('@/assets/img.webp')"
-        :webpNormal="require('@/assets/img@2.webp')"
-        :webpLarge="require('@/assets/img@3.webp')"
-        :lazy="true"
-        :breakpoints="{
-          normal: '465px',
-          large: '768px'
-        }"
-      />
-    </div>
-    <div class="seng-image component">
-      <h4>Component</h4>
-      <h2>seng-image</h2>
-      <seng-image
-        class="image"
-        alt="seng-image"
-        :src="require('@/assets/img.jpg')"
-        :large="require('@/assets/img@3.jpg')"
-        :normal="require('@/assets/img@2.jpg')"
-        :webpSmall="require('@/assets/img.webp')"
-        :webpNormal="require('@/assets/img@2.webp')"
-        :webpLarge="require('@/assets/img@3.webp')"
-        :lazy="true"
-        :breakpoints="{
-          normal: '465px',
-          large: '768px'
-        }"
-      />
-    </div>
-    <div class="seng-image component">
-      <h4>Component</h4>
-      <h2>seng-image</h2>
-      <seng-image
-        class="image"
-        alt="seng-image"
-        :src="require('@/assets/img.jpg')"
-        :large="require('@/assets/img@3.jpg')"
-        :normal="require('@/assets/img@2.jpg')"
-        :webpSmall="require('@/assets/img.webp')"
-        :webpNormal="require('@/assets/img@2.webp')"
-        :webpLarge="require('@/assets/img@3.webp')"
-        :lazy="true"
-        :breakpoints="{
-          normal: '465px',
-          large: '768px'
-        }"
-      />
-    </div>
-    <div class="seng-image component">
-      <h4>Component</h4>
-      <h2>seng-image</h2>
-      <seng-image
-        class="image"
-        alt="seng-image"
-        :src="require('@/assets/img.jpg')"
-        :large="require('@/assets/img@3.jpg')"
-        :normal="require('@/assets/img@2.jpg')"
-        :webpSmall="require('@/assets/img.webp')"
-        :webpNormal="require('@/assets/img@2.webp')"
-        :webpLarge="require('@/assets/img@3.webp')"
         :lazy="true"
         :breakpoints="{
           normal: '465px',

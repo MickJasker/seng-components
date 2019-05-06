@@ -4,10 +4,10 @@
       <picture v-if="isVisible && (large || normal)">
 
         <source
-          :srcset="webpLarge"
+          :srcset="changeExtension(large, '.wepb')"
           :media="`(min-width: ${breakpoints.large})`"
           type="image/webp"
-          v-if="webpLarge && isNetworkFast"
+          v-if="large && isNetworkFast"
         >
         <source
           :srcset="large"
@@ -17,10 +17,10 @@
         >
 
         <source
-          :srcset="webpNormal"
+          :srcset="changeExtension(normal, '.wepb')"
           :media="`(min-width: ${breakpoints.normal})`"
           type="image/webp"
-          v-if="webpNormal"
+          v-if="normal"
         >
         <source
           :srcset="normal"
@@ -30,7 +30,7 @@
         >
 
         <source
-          :srcset="webpSmall"
+          :srcset="changeExtension(src, '.wepb')"
           type="image/webp"
         >
         <source
@@ -94,6 +94,11 @@ export default class SengImage extends Vue {
     }),
   })
   readonly breakpoints?: Breakpoints;
+
+  static changeExtension(file: string, ext: string): string {
+    const strippedFile = file.replace(/\.[^/.]+$/, '');
+    return strippedFile + ext;
+  }
 
   private enterView() {
     this.isVisible = true;
