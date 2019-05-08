@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="seng-image component">
-      <h4>Component</h4>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 1</h4>
       <h2>seng-image</h2>
       <seng-image
         class="image"
@@ -9,13 +9,102 @@
         :src="require('@/assets/img.jpg')"
         :large="require('@/assets/img@3.jpg')"
         :normal="require('@/assets/img@2.jpg')"
-        :lazy="true"
         :breakpoints="{
           normal: '465px',
           large: '768px'
         }"
       />
-    </div>
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 2</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 3</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 4</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 4</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 4</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
+    <Lazy height="300px" class="seng-image component">
+      <h4>Component 4</h4>
+      <h2>seng-image</h2>
+      <seng-image
+        class="image"
+        alt="seng-image"
+        :src="require('@/assets/img.jpg')"
+        :large="require('@/assets/img@3.jpg')"
+        :normal="require('@/assets/img@2.jpg')"
+        :breakpoints="{
+          normal: '465px',
+          large: '768px'
+        }"
+      />
+    </Lazy>
     <seng-statistics />
   </div>
 </template>
@@ -24,6 +113,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import SengImage from '@/components/SengImage.vue';
 import SengStatistics from '@/components/SengStatistics.vue';
+import Lazy from '@/components/Lazy.vue';
 
 interface Image {
   src: string;
@@ -34,6 +124,7 @@ interface Image {
   components: {
     SengImage,
     SengStatistics,
+    Lazy,
   },
 })
 export default class App extends Vue {}
