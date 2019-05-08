@@ -3634,10 +3634,10 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-device-performance-metrics@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.1.4.tgz#029a053211e26df494172f49841001c1dfbd803d"
-  integrity sha512-EQIP2GfgeYrshXUeV4tL317xxh39+tRWGU9DnJ6hlLCwbZd5B0mvmjyFNkcXbXiwTdTibXwFFRzWN1/2wwYx3Q==
+device-performance-metrics@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.1.7.tgz#4b983f4cf9fd140210a19cad9a46ff99dee0633a"
+  integrity sha512-cxBigDRQi8n+4FdUZtd23drTBFINHTL4+AlgYD2E0TDTDONnxPGhunDxWfSBHVVkMlvnkixijSmdy4IL5pPoDw==
   dependencies:
     "@babel/polyfill" "^7.4.0"
     browserslist-useragent "^3.0.0"

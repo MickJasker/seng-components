@@ -14,13 +14,14 @@
     <div class="info">
       <h2>Network</h2>
       <h3 id="bandwidth">{{ appStatistics.bandwidth }}Mbps</h3>
+      <h3 id="bandwidth">{{ appStatistics.bandAra }}</h3>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Prop, Component } from 'vue-property-decorator';
-import DevicePerformanceMetrics from 'device-performance-metrics';
+import DevicePerformanceMetrics, { NetworkBandwidthInformation } from 'device-performance-metrics';
 
 interface IAppStatistics {
   browser: string;
@@ -77,7 +78,7 @@ export default class SengStatistics extends Vue {
   }
 
   private getBandWidth(): void {
-    const networkInfo = this.metrics.networkBandwidthInformation;
+    const networkInfo = new NetworkBandwidthInformation(1000);
 
     this.appStatistics.bandwidth = Math.round(networkInfo.getAverageBandwidth() / 10) / 100;
   }
@@ -92,8 +93,8 @@ export default class SengStatistics extends Vue {
   right: 0;
   background: white;
   padding: 20px;
-  box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.1)
-  , 0 0 2rem rgba($color: #000000, $alpha: 0.1);
+  box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.1),
+    0 0 2rem rgba($color: #000000, $alpha: 0.1);
 
   h1 {
     margin-block-start: 0;
