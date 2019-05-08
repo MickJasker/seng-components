@@ -13,7 +13,7 @@
     "@types/lodash": "^4.14.123",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "core-js": "^2.6.5",
-    "device-performance-metrics": "^1.1.4",
+    "device-performance-metrics": "^1.1.7",
     "lodash": "^4.17.11",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
