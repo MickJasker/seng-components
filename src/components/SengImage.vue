@@ -95,7 +95,8 @@ export default class SengImage extends Vue {
   })
   readonly breakpoints?: Breakpoints;
 
-  static changeExtension(file: string, ext: string): string {
+  // eslint-disable-next-line
+  changeExtension(file: string, ext: string): string {
     const strippedFile = file.replace(/\.[^/.]+$/, '');
     return strippedFile + ext;
   }
