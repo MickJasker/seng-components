@@ -1,13 +1,17 @@
 <template>
-  <intersect @enter.once="enterView">
     <div class="seng-image">
       <picture v-if="isVisible && (large || normal)">
-
         <source
-          :srcset="changeExtension(large, '.wepb')"
+          :srcset="changeExtension(large, '.webp')"
           :media="`(min-width: ${breakpoints.large})`"
           type="image/webp"
           v-if="large && isNetworkFast"
+        >
+        <source
+          :srcset="webpLarge"
+          :media="`(min-width: ${breakpoints.large})`"
+          type="image/webp"
+          v-else-if="webpLarge && isNetworkFast"
         >
         <source
           :srcset="large"
@@ -17,10 +21,16 @@
         >
 
         <source
-          :srcset="changeExtension(normal, '.wepb')"
+          :srcset="changeExtension(normal, '.webp')"
           :media="`(min-width: ${breakpoints.normal})`"
           type="image/webp"
           v-if="normal"
+        >
+        <source
+          :srcset="webpNormal"
+          :media="`(min-width: ${breakpoints.normal})`"
+          type="image/webp"
+          v-else-if="webpNormal"
         >
         <source
           :srcset="normal"
@@ -29,24 +39,17 @@
           v-if="normal"
         >
 
-        <source
-          :srcset="changeExtension(src, '.wepb')"
-          type="image/webp"
-        >
-        <source
-          :srcset="src"
-          type="image/jpeg"
-        >
+        <source :srcset="webpSmall" type="image/webp" v-if="webpSmall">
+        <source v-else :srcset="changeExtension(src, '.webp')" type="image/webp">
+        <source :srcset="src" type="image/jpeg">
         <img :src="src" :alt="alt">
       </picture>
       <img v-else-if="isVisible" :src="src" :alt="alt">
     </div>
-  </intersect>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Intersect from 'vue-intersect';
 import { NetworkBandwidthInformation } from 'device-performance-metrics';
 
 interface Breakpoints {
@@ -54,15 +57,11 @@ interface Breakpoints {
   large: string;
 }
 
-@Component({
-  components: {
-    Intersect,
-  },
-})
+@Component
 export default class SengImage extends Vue {
-  private readonly networkInfo = new NetworkBandwidthInformation();
+  private readonly networkInfo = new NetworkBandwidthInformation(10000);
 
-  private bandwidth: number = 0;
+  private bandwidth: number | undefined = 0;
 
   private isVisible: boolean = false;
 
@@ -97,8 +96,7 @@ export default class SengImage extends Vue {
 
   // eslint-disable-next-line
   changeExtension(file: string, ext: string): string {
-    const strippedFile = file.replace(/\.[^/.]+$/, '');
-    return strippedFile + ext;
+    return file + ext;
   }
 
   private enterView() {
@@ -112,7 +110,11 @@ export default class SengImage extends Vue {
 
     this.bandwidth = this.networkInfo.getAverageBandwidth();
 
-    if (this.bandwidth / 1000 > 10) {
+    if (this.bandwidth) {
+      if (this.bandwidth / 1000 > 10) {
+        this.isNetworkFast = true;
+      }
+    } else {
       this.isNetworkFast = true;
     }
   }

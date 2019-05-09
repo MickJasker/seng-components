@@ -811,10 +811,10 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.14.tgz#37daaf78069e7948520474c87b80092ea912520a"
   integrity sha512-Q5hTcfdudEL2yOmluA1zaSyPbzWPmJ3XfSWeP3RyoYvS9hnje1ZyagrZOuQ6+1nQC1Gw+7gap3pLNL3xL6UBug==
 
-"@types/lodash@^4.14.123":
-  version "4.14.123"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
-  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
+"@types/lodash@^4.14.124":
+  version "4.14.124"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.124.tgz#16fb067a8fc4be42f044c505d8b5316c6f54de93"
+  integrity sha512-6bKEUVbHJ8z34jisA7lseJZD2g31SIvee3cGX2KEZCS4XXWNbjPZpmO1/2rGNR9BhGtaYr6iYXPl1EzRrDAFTA==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -3634,10 +3634,10 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-device-performance-metrics@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.1.7.tgz#4b983f4cf9fd140210a19cad9a46ff99dee0633a"
-  integrity sha512-cxBigDRQi8n+4FdUZtd23drTBFINHTL4+AlgYD2E0TDTDONnxPGhunDxWfSBHVVkMlvnkixijSmdy4IL5pPoDw==
+device-performance-metrics@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.2.0.tgz#f0af091339ba8082183b0b82b1c68a702f2d4f91"
+  integrity sha512-nouVUiKNSkGN8bsb2y3pMfGH+hysfwhlHsG/F98fgKsMz8JKjKHf0/v2QDbXTmt/ELAn3iz+HkSMvJIDfkmW7w==
   dependencies:
     "@babel/polyfill" "^7.4.0"
     browserslist-useragent "^3.0.0"
@@ -5884,6 +5884,11 @@ interpret@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
+
+intersection-observer@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.6.0.tgz#d64aae04211b4cec051537168f5fa670a4acc770"
+  integrity sha512-WUVAqGJr08yh73XKe1JhylQ9BiBIytrkt8SH5Knu7Uy44ij5cICi6PbVLIbV/D2eIx9LJVkGBo9WF80R4VXJ+w==
 
 into-stream@^3.1.0:
   version "3.1.0"

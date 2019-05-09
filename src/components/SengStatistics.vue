@@ -13,8 +13,8 @@
     </div>
     <div class="info">
       <h2>Network</h2>
-      <h3 id="bandwidth">{{ appStatistics.bandwidth }}Mbps</h3>
-      <h3 id="bandwidth">{{ appStatistics.bandAra }}</h3>
+      <h3 v-if="appStatistics.bandwidth" id="bandwidth">{{ appStatistics.bandwidth }}MB/s</h3>
+      <h3 v-else id="bandwidth">- MB/s</h3>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ interface IAppStatistics {
   os: string;
   deviceType: string;
   fps: number;
-  bandwidth: number;
+  bandwidth: number | undefined;
 }
 
 @Component({})
@@ -80,7 +80,14 @@ export default class SengStatistics extends Vue {
   private getBandWidth(): void {
     const networkInfo = new NetworkBandwidthInformation(1000);
 
-    this.appStatistics.bandwidth = Math.round(networkInfo.getAverageBandwidth() / 10) / 100;
+    setInterval(() => {
+      const avgBandwidth = networkInfo.getAverageBandwidth();
+      if (avgBandwidth) {
+        this.appStatistics.bandwidth = Math.round(avgBandwidth / 10) / 100;
+      } else {
+        this.appStatistics.bandwidth = undefined;
+      }
+    }, 1000);
   }
 }
 </script>
@@ -91,10 +98,11 @@ export default class SengStatistics extends Vue {
   position: fixed;
   top: 0;
   right: 0;
-  background: white;
+  color: white;
+  background: rgba($color: #000000, $alpha: 0.5);
   padding: 20px;
-  box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.1),
-    0 0 2rem rgba($color: #000000, $alpha: 0.1);
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
 
   h1 {
     margin-block-start: 0;
@@ -104,7 +112,7 @@ export default class SengStatistics extends Vue {
     &:not(:last-child) {
       margin-bottom: 20px;
       padding-bottom: 20px;
-      border-bottom: solid 1px hsl(210, 20%, 50%);
+      border-bottom: solid 1px rgba($color: #fff, $alpha: 0.5);
     }
 
     h2 {
