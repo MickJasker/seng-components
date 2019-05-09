@@ -3,6 +3,8 @@ import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import App from './App.vue';
 
+require('intersection-observer');
+
 const requireComponent = require.context(
   './components',
   true,

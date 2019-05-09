@@ -44,7 +44,6 @@ export default class Lazy extends Vue {
       (entries: IntersectionObserverEntry[]) => {
         entries.map((entry) => {
           // this.inView = entry.isIntersecting;
-          console.log(entry);
 
           if (!isPassed) {
             this.inView = entry.isIntersecting;
