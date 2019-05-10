@@ -1,6 +1,6 @@
 <template>
   <div :style="{'min-height': height}" class="lazy">
-    <slot  v-if="inView"/>
+    <slot v-if="inView"/>
   </div>
 </template>
 
@@ -13,17 +13,15 @@ import {
 export default class Lazy extends Vue {
   public inView: boolean = false;
 
-  public inViewOnce: boolean = false;
-
-  private intersectionObserverOptions = {
-    root: this.$el,
-    rootMargin: '0px',
-    treshold: 1.0,
-  };
-
   private observe: IntersectionObserver | undefined;
 
   @Prop(String) readonly height!: string;
+
+  @Prop({ default: null }) readonly root!: HTMLElement | null;
+
+  @Prop({ type: String, default: '0px' }) readonly rootMargin!: string;
+
+  @Prop({ type: Number, default: 0 }) readonly threshold!: number;
 
   @Watch('inView', { immediate: true })
   setViewStateEvent(val: boolean): void {
@@ -42,23 +40,20 @@ export default class Lazy extends Vue {
     }, 100);
     this.observe = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
-        entries.map((entry) => {
-          // this.inView = entry.isIntersecting;
-
+        entries.map((entry: IntersectionObserverEntry) => {
           if (!isPassed) {
             this.inView = entry.isIntersecting;
           } else if (this.inView === false) {
             this.inView = entry.isIntersecting;
           }
 
-
           return entry;
         });
       },
       {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
+        root: this.root,
+        rootMargin: this.rootMargin,
+        threshold: this.threshold,
       },
     );
     this.observe.observe(this.$el);
