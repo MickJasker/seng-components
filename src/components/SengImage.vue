@@ -67,8 +67,18 @@ export default class SengImage extends Vue {
 
   private isNetworkFast: boolean = false;
 
+  /**
+ * Pass the src of smallest image. This is also the image
+ * that is used in browsers not supporting the ```<picutre>``` tag.
+ *
+ * When using webpack or you can pass an image like this:
+ * ```
+ * <seng-image :src="require('path/to/image')" />
+ * ```
+ */
   @Prop(String) readonly src!: string;
 
+  /** General alt attribute */
   @Prop(String) readonly alt!: string;
 
   @Prop(String) readonly webpSmall?: string;
@@ -77,10 +87,6 @@ export default class SengImage extends Vue {
 
   @Prop(String) readonly webpLarge?: string;
 
-  @Prop({
-    default: false,
-  })
-  readonly lazy?: boolean;
 
   @Prop(String) readonly normal?: string;
 
@@ -99,15 +105,7 @@ export default class SengImage extends Vue {
     return file + ext;
   }
 
-  private enterView() {
-    this.isVisible = true;
-  }
-
   private mounted() {
-    if (!this.lazy) {
-      this.enterView();
-    }
-
     this.bandwidth = this.networkInfo.getAverageBandwidth();
 
     if (this.bandwidth) {
