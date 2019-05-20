@@ -10,7 +10,7 @@ import {
 } from 'vue-property-decorator';
 
 @Component({})
-export default class Lazy extends Vue {
+export default class SengLazy extends Vue {
   public inView: boolean = false;
 
   private observe: IntersectionObserver | undefined;
@@ -21,7 +21,7 @@ export default class Lazy extends Vue {
   @Prop({ type: String, default: '200px' }) readonly height!: string;
 
   /**
-   * The element that is used as the viewport for checking visiblity of
+   * The element that is used as the viewport for checking visibility of
    * the target. Must be the ancestor of the target. Defaults to the
    * browser viewport if not specified or if ```null```.
    */
@@ -50,7 +50,7 @@ export default class Lazy extends Vue {
   @Prop({ type: [Number, Array], default: 0 }) readonly threshold!: number | number[];
 
   setViewStateEvent(val: boolean): void {
-    if (val === true) {
+    if (val) {
       /**
        * When element enters the view.
        */
@@ -75,7 +75,7 @@ export default class Lazy extends Vue {
           this.setViewStateEvent(entry.isIntersecting);
           if (!isPassed) {
             this.inView = entry.isIntersecting;
-          } else if (this.inView === false) {
+          } else if (!this.inView) {
             this.inView = entry.isIntersecting;
           }
 
