@@ -94,10 +94,7 @@ export default class SengImage extends Vue {
   })
   readonly breakpoints?: Breakpoints;
 
-  // eslint-disable-next-line
-  changeExtension(file: string, ext: string): string {
-    return file + ext;
-  }
+  changeExtension = (file: string, ext: string): string => file + ext;
 
   private enterView() {
     this.isVisible = true;

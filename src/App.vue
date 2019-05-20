@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Lazy height="300px" class="seng-image component">
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 1</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -14,8 +14,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 2</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -29,8 +29,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 3</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -44,8 +44,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 4</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -59,8 +59,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 4</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -74,8 +74,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 4</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -89,8 +89,8 @@
           large: '768px'
         }"
       />
-    </Lazy>
-    <Lazy height="300px" class="seng-image component">
+    </seng-lazy>
+    <seng-lazy height="300px" class="seng-image component">
       <h4>Component 4</h4>
       <h2>seng-image</h2>
       <seng-image
@@ -104,7 +104,7 @@
           large: '768px'
         }"
       />
-    </Lazy>
+    </seng-lazy>
     <seng-statistics />
   </div>
 </template>
@@ -113,18 +113,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import SengImage from '@/components/SengImage.vue';
 import SengStatistics from '@/components/SengStatistics.vue';
-import Lazy from '@/components/Lazy.vue';
-
-interface Image {
-  src: string;
-  alt?: string;
-}
+import SengLazy from '@/components/SengLazy.vue';
 
 @Component({
   components: {
     SengImage,
     SengStatistics,
-    Lazy,
+    SengLazy,
   },
 })
 export default class App extends Vue {}
@@ -157,8 +152,7 @@ export default class App extends Vue {}
     }
 
     h4 {
-      margin: 0;
-      margin-bottom: 2px;
+      margin: 0 0 2px;
       opacity: 0.75;
     }
   }
