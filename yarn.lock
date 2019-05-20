@@ -4132,10 +4132,10 @@ detect-port-alt@1.1.6:
     address "^1.0.1"
     debug "^2.6.0"
 
-device-performance-metrics@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.2.0.tgz#f0af091339ba8082183b0b82b1c68a702f2d4f91"
-  integrity sha512-nouVUiKNSkGN8bsb2y3pMfGH+hysfwhlHsG/F98fgKsMz8JKjKHf0/v2QDbXTmt/ELAn3iz+HkSMvJIDfkmW7w==
+device-performance-metrics@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/device-performance-metrics/-/device-performance-metrics-1.2.1.tgz#3f53181f2f40924c866400a213a9817497206ecd"
+  integrity sha512-QoZEWW96splvWxovHcs37nsT5lX1oD5vJvByostYOvN0nkfCOY25T9GdmRgeI653nSiTXXOSxNy+wTO9GusewA==
   dependencies:
     "@babel/polyfill" "^7.4.0"
     browserslist-useragent "^3.0.0"

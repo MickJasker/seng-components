@@ -105,20 +105,17 @@
         }"
       />
     </seng-lazy>
-    <seng-statistics />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import SengImage from '@/components/SengImage.vue';
-import SengStatistics from '@/components/SengStatistics.vue';
 import SengLazy from '@/components/SengLazy.vue';
 
 @Component({
   components: {
     SengImage,
-    SengStatistics,
     SengLazy,
   },
 })
